@@ -1,0 +1,11 @@
+Column Name,Definition,,,,,,,,,,,,,,,,,,Generation Resource Types,Definition
+Time,A Time Stamp in Local (Central Daylight) Time,,,,,,,,,,,,,,,,,,CCGT90,Combined Cycle Greater than 90MW
+Resource.Name,Unique name of the generation resource,,,,,,,,,,,,,,,,,,CLLIG,"Coal, Lignite"
+Resource.Type,Type of generation resource (see Table at right),,,,,,,,,,,,,,,,,,WIND,Wind Power Generator
+SCED1.Curve.MW1,"Security constrained economic dispatch, MW bin 1 (this is the number of MW being offered for the price found in SCED1.Curve.Price1 for this generator at this time)",,,,,,,,,,,,,,,,,,HYDRO,Hydro Power Generator
+SCED1.Curve.Price1,"Security constrained economic dispatch, $/MW bin 1 (this is the price per MW being offered for the MW generation found in SCED1.Curve.MW1 for this generator at this time)",,,,,,,,,,,,,,,,,,SCLE90,Simple Cycle Less than or Equal to 90MW
+SCED1.Curve.MW2,"Security constrained economic dispatch, MW bin 2 (this is the number of MW being offered for the price found in SCED1.Curve.Price2 for this generator at this time)",,,,,,,,,,,,,,,,,,SCGT90,Simple Cycle Greater than 90MW
+SCED1.Curve.Price2,"Security constrained economic dispatch, $/MW bin 2 (this is the price per MW being offered for the MW generation found in SCED1.Curve.MW2 for this generator at this time)",,,,,,,,,,,,,,,,,,DSL,Diesel
+…,,,,,,,,,,,,,,,,,,,CCLE90,Combined Cycle Less than or Equal to 90 MW
+SCED1 Curve Pattern repeats through bin 35,,,,,,,,,,,,,,,,,,,GSREH,Gas Steam Reheat Boiler
+Base.Point,Generation level a plant is directed to produce by the system operator in a given interval,,,,,,,,,,,,,,,,,,GSSUP,Gas Steam Super Critical Boiler
