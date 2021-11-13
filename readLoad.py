@@ -32,34 +32,23 @@ def datetime_cmp(d1, d2):
 
 def print_library_info(cnxn):
     # import pyodbc
-    print 'python:  %s' % sys.version
-    print 'pyodbc:  %s %s' % (pyodbc.version, ospath.abspath(pyodbc.__file__))
-    print 'odbc:    %s' % cnxn.getinfo(pyodbc.SQL_ODBC_VER)
-    print 'driver:  %s %s' % (cnxn.getinfo(pyodbc.SQL_DRIVER_NAME), cnxn.getinfo(pyodbc.SQL_DRIVER_VER))
-    print '         supports ODBC version %s' % cnxn.getinfo(pyodbc.SQL_DRIVER_ODBC_VER)
-    print 'os:      %s' % platform.system()
-    print 'unicode: Py_Unicode=%s SQLWCHAR=%s' % (pyodbc.UNICODE_SIZE, pyodbc.SQLWCHAR_SIZE)
+    print ('python:  %s' % sys.version)
+    print ('pyodbc:  %s %s' % (pyodbc.version, ospath.abspath(pyodbc.__file__)))
+    print ('odbc:    %s' % cnxn.getinfo(pyodbc.SQL_ODBC_VER))
+    print ('driver:  %s %s' % (cnxn.getinfo(pyodbc.SQL_DRIVER_NAME), cnxn.getinfo(pyodbc.SQL_DRIVER_VER)))
+    print ('         supports ODBC version %s' % cnxn.getinfo(pyodbc.SQL_DRIVER_ODBC_VER))
+    print ('os:      %s' % platform.system())
+    print ('unicode: Py_Unicode=%s SQLWCHAR=%s' % (pyodbc.UNICODE_SIZE, pyodbc.SQLWCHAR_SIZE))
 
     if platform.system() == 'Windows':
-        print '         %s' % ' '.join([s for s in platform.win32_ver() if s])
+        print ('         %s' % ' '.join([s for s in platform.win32_ver() if s]))
 
 def main():
-    # currentFile1 = ospath.dirname(inspect.getfile(inspect.currentframe()))
-    '''
-    pathName = ospath.join(currentFile,'Outputs/')
-    mpsOutFile = pathName+'/MyMPS.mps'
-    '''
-    # currentFile = 'Z:/software/Python/example/access/accessexam1.py'
-    # path = ospath.dirname(ospath.abspath(currentFile))
-
-
-    #databaseFile = ospath.join(path, 'Data/JHU_WECC300_Load.accdb')
 
     currentFilePath = ospath.dirname(inspect.getfile(inspect.currentframe()))
     # pathName="12Mon_2day_24hr//"
     path = currentFilePath
-    # write the MPS file???
-    # mpsOutFile=pathName+'/Model%s.mps'%time.ctime().translate(None,': ')
+
     loadFile = path + '/DemandData.csv'
 
 
@@ -79,7 +68,7 @@ def main():
     print("read load file")
     df = pandas.read_csv(loadFile);
     columnnames = list(df.columns.values)
-    print columnnames
+    print (columnnames)
     tempLoad = df.values
     loadTimeStamp1 = tempLoad[:, 0]
 
@@ -87,14 +76,13 @@ def main():
 
     #TEPPCAreaList = columnnames[1:]
     hrLoad = tempLoad[:, 1]
-    # https://stackoverflow.com/questions/4539254/how-to-get-datatypes-of-specific-fields-of-an-access-database-using-pyodbc
+
     print("read SCED file")
 
     df = pandas.read_csv(scedFile);
-    #df = pandas.read_csv('U:\Documents\Code\Python_LoadReshape\V3\Data/2024TEPPCAreaLoad.csv')
-    # print df
+
     columnnames = list(df.columns.values)
-    print columnnames
+    print(columnnames)
 
 
 
